@@ -462,16 +462,16 @@ pre {
     <div id="authors">
         <center>
             <div class="author-row-new">
-                <a href="john-b-yang.github.io">John Yang<sup>*1</sup></a>
-                <a href="https://aksh555.github.io/">Akshara Prabhakar<sup>*1</sup></a>
-                <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan<sup>1</sup></a>
-                <a href="https://ysymyth.github.io/">Shunyu Yao<sup>1</sup></a>
+                <a href="john-b-yang.github.io">John Yang<sup>*</sup></a>
+                <a href="https://aksh555.github.io/">Akshara Prabhakar<sup>*</sup></a>
+                <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a>
+                <a href="https://ysymyth.github.io/">Shunyu Yao</a>
             </div>
         </center>
 
         <center>
             <div class="author-row-new">
-                <sup>1</sup>Princeton University
+                Princeton University
             </div>
         </center>
 
@@ -525,22 +525,7 @@ pre {
         <h2>Abstract</h2>
         <div class="flex-row">
             <p>
-                Humans write code in a fundamentally interactive manner and rely on constant execution feedback.
-                While LLMs have recently exhibited promising coding capabilities, current coding benchmarks mostly
-                consider a static instruction-to-code sequence transduction process, which has the potential for
-                error propagation and a disconnect between the generated code and its final execution environment.
-                To address this gap, we introduce InterCode, a lightweight, flexible, and easy-to-use framework for
-                constructing interactive code environments with multiple types of feedback signals. Our framework
-                (1) is language and platform agnostic, (2) uses self-contained Docker environments to provide safe
-                execution, and (3) is compatible out-of-the-box with traditional seq2seq generation methods, while
-                enabling the development of new methods for interactive code generation. We use InterCode to create
-                two interactive code environments with Bash and SQL as action spaces, leveraging data from the static
-                Spider and NL2Bash datasets. We demonstrate InterCode's viability as a testbed by evaluating multiple
-                state-of-the-art LLMs configured with different prompting strategies such as ReAct and Plan & Solve.
-                Our results showcase the benefits of interactive code generation and demonstrate that InterCode can
-                serve as a challenging benchmark for advancing code understanding and generation capabilities.
-                InterCode is designed to be easily extensible and can even be used to incorporate new tasks such as
-                Capture the Flag, a popular type of coding puzzle.
+                Humans write code in a fundamentally interactive manner and rely on constant execution feedback to correct errors, resolve ambiguities, and decompose tasks. While LLMs have recently exhibited promising coding capabilities, current coding benchmarks mostly consider a static instruction-to-code sequence transduction process, which has the potential for error propagation and a disconnect between the generated code and its final execution environment. To address this gap, we introduce InterCode, a lightweight, flexible, and easy-to-use framework of interactive coding as a standard reinforcement learning (RL) environment, with code as actions and execution feedback as observations. Our framework is language and platform agnostic, uses self-contained Docker environments to provide safe and reproducible execution, and is compatible out-of-the-box with traditional seq2seq coding methods, while enabling the development of new methods for interactive code generation. We use InterCode to create two interactive code environments with Bash and SQL as action spaces, leveraging data from the static Spider and NL2Bash datasets. We demonstrate InterCode's viability as a testbed by evaluating multiple state-of-the-art LLMs configured with different prompting strategies such as ReAct and Plan & Solve. Our results showcase the benefits of interactive code generation and demonstrate that InterCode can serve as a challenging benchmark for advancing code understanding and generation capabilities. InterCode is designed to be easily extensible and can even be used to incorporate new tasks such as Capture the Flag, a popular coding puzzle that is inherently multi-step and involves multiple programming languages.
             </p>
         </div>
     </section>
