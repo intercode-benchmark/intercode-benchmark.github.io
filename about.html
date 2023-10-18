@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>InterCode</title>
+    <meta name="description" content="InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta property="og:image" content="/logo.png" />
+    <!-- <link rel="image_src" type="image/png" href="logo.png" /> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="..." crossorigin="anonymous" />
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="content-wrapper" style="align-items: center;padding-top:0.5em">
+        <img src="img/pnlp-logo.svg" style="width: 3em;" />
+        <div class="top-bar">
+          <a id="button-home">Home</a>
+          &nbsp;
+          <a id="button-about">About</a>
+          &nbsp;
+          <a id="button-envs">Environments</a>
+        </div>
+      </div>
+    </header>
+    <section style="background-color: #E4F0D0;">
+      <div class="content-wrapper title-wrapper" style="flex-direction:column;">
+        <h1 style="font-size:60px;">
+          InterCode
+        </h1>
+        <h3>
+          Standardizing and Benchmarking Interactive Coding with Execution Feedback
+        </h3>
+        <p class="text-content" style="margin-top:1em;">
+            <a href="https://john-b-yang.github.io/">John Yang</a> &nbsp;
+            <a href="https://aksh555.github.io/">Akshara Prabhakar</a> &nbsp;
+            <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a> &nbsp;
+            <a href="https://ysymyth.github.io/">Shunyu Yao</a> &nbsp;
+        </p>
+        <div class="content-wrapper" style="margin-top:1em;">
+            <div class="button-container">
+              <a class="button unfilled" href="https://arxiv.org/abs/2306.14898">
+                <i class="fa fa-paperclip"></i> Paper
+              </a>
+            </div>
+            <div class="button-container">
+              <a class="button unfilled" href="https://github.com/princeton-nlp/intercode">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+            <div class="button-container">
+              <a class="button unfilled" href="https://github.com/princeton-nlp/intercode/tree/master/data">
+                <i class="fa fa-download"></i> Download
+              </a>
+            </div>
+            <div class="button-container">
+              <a class="button unfilled" href="https://pypi.org/project/intercode-bench/">
+                <i class="fa fa-archive"></i> PyPI
+              </a>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="main-container">
+      <div class="content-wrapper">
+        Coming soon!
+      </div>
+    </section>
+    <footer class="footer-container">
+      <div class="content-wrapper">
+        <div class="footer-text"><a href="https://princeton-nlp.github.io/">© Princeton NLP 2023</a></div>
+      </div>
+    </footer>
+    <script>
+      var myButton = document.getElementById('button-home');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+      var myButton = document.getElementById('button-about');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'about.html';
+      });
+      var myButton = document.getElementById('button-envs');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'environments.html';
+      });
+    </script>
+  </body>
+</html>

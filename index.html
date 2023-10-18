@@ -9,7 +9,7 @@
     <meta property="og:image" content="/logo.png" />
     <!-- <link rel="image_src" type="image/png" href="logo.png" /> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -17,8 +17,15 @@
   </head>
   <body>
     <header class="header-container">
-      <div class="content-wrapper">
-        <img src="img/pnlp-logo.svg" style="width: 3em;padding-top:0.5em" />
+      <div class="content-wrapper" style="align-items: center;padding-top:0.5em">
+        <img src="img/pnlp-logo.svg" style="width: 3em;" />
+        <div class="top-bar">
+          <a id="button-home">Home</a>
+          &nbsp;
+          <a id="button-about">About</a>
+          &nbsp;
+          <a id="button-envs">Environments</a>
+        </div>
       </div>
     </header>
     <section style="background-color: #E4F0D0;">
@@ -444,6 +451,19 @@
         openLeaderboard(event, "Bash");
         document.getElementById("tab-bash").className += " active";
       };
+
+      var myButton = document.getElementById('button-home');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+      var myButton = document.getElementById('button-about');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'about.html';
+      });
+      var myButton = document.getElementById('button-envs');
+      myButton.addEventListener('click', function() {
+        window.location.href = 'environments.html';
+      });
     </script>
   </body>
 </html>
