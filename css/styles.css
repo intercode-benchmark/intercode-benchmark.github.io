@@ -72,14 +72,6 @@ body {
   margin: 1em 0;
 }
 
-.logo-container.left {
-  display: flex;
-}
-
-.logo-container.right {
-  margin-left: auto;
-}
-
 h1.logo,
 .subtitle,
 .logo-button-text {
@@ -96,42 +88,6 @@ h1.logo {
   align-items: center;
   justify-content: center;
   padding: 2em 0em;
-}
-
-.subtitle {
-  position: absolute;
-  top: 3.8em;
-  left: 1.2em;
-  font-size: 0.6em;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.logo-button {
-  background-color: var(--blue);
-  display: inline-block;
-  padding: 0.15em 1.1em;
-  position: relative;
-}
-
-.logo-button .logo-button-text {
-  font-size: 0.6em;
-  position: relative;
-  bottom: 0.2em;
-  left: 0.4em;
-  font-weight: bold;
-}
-
-.logo-button .logo-button-icon {
-  top: 0.4em;
-  left: 0.4em;
-  position: absolute;
-  width: 11px;
-  height: 11px;
-}
-
-a.logo-button:hover {
-  filter: brightness(85%);
 }
 
 .main-container {
@@ -169,29 +125,23 @@ h2.text-title {
   font-size: 0.9em;
 }
 
-.small-text {
-  font-size: 0.85em;
-  font-weight: 300;
-}
-
-.image-content {
-  text-align: center;
-}
-
-.image-content img {
-  width: 100%;
-}
-
-.button-container {
-  text-align: center;
-}
-
 .centered-text-container {
   margin-top: 0.6em;
   text-align: center;
 }
 
-.button-container button.button,
+/* MARK: Button Styling */
+
+.button-container {
+  text-align: center;
+}
+.button-container.button-small {
+  width: 6em;
+  margin-left: 0em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+}
+
 .button-container a.button {
   width: 10em;
   height: 2.22em;
@@ -202,23 +152,16 @@ h2.text-title {
   padding: 0.45em 0;
   box-sizing: border-box;
   margin: 0.5em 0.5em;
+  border-radius: 0.5em;
+}
+.button-container.button-small a {
+  width: 6em;
 }
 
-.button-container button.button:hover,
 .button-container a.button:hover {
   filter: brightness(85%);
 }
 
-button.button.green,
-a.button.green {
-  background-color: var(--green);
-}
-button.button.blue,
-a.button.blue {
-  background-color: var(--blue);
-}
-
-button.button.unfilled,
 a.button.unfilled {
   background-color: transparent;
   border: 1px solid var(--blue);
@@ -226,17 +169,20 @@ a.button.unfilled {
   font-weight: normal;
   position: relative;
 }
-button.button.unfilled:hover,
 a.button.unfilled:hover {
   border-color: var(--grey);
   color: var(--grey);
 }
 
-.button-icon {
-  position: absolute;
-  right: 0.9em;
-  top: 0.45em;
+.button-container.button-small.active a.button.unfilled {
+  border-color: var(--grey);
+  color: var(--grey);
 }
+.button-container.button-small.active a.button.unfilled:hover {
+  filter: brightness(100%);
+}
+
+/* MARK: Table Styling  */
 
 .content-table {
   margin-top: 1.7em;

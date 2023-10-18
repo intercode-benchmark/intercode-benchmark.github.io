@@ -37,25 +37,24 @@
         </p>
         <div class="content-wrapper" style="margin-top:1em;">
             <div class="button-container">
-                <a class="button unfilled" href="https://arxiv.org/abs/2306.14898">
-                    <i class="fa fa-paperclip"></i>
-                    Paper
-                </a>
+              <a class="button unfilled" href="https://arxiv.org/abs/2306.14898">
+                <i class="fa fa-paperclip"></i> Paper
+              </a>
             </div>
             <div class="button-container">
-                <a class="button unfilled" href="https://github.com/princeton-nlp/intercode">
-                    <i class="fab fa-github"></i> Code
-                </a>
+              <a class="button unfilled" href="https://github.com/princeton-nlp/intercode">
+                <i class="fab fa-github"></i> Code
+              </a>
             </div>
             <div class="button-container">
-                <a class="button unfilled" href="https://github.com/princeton-nlp/intercode/tree/master/data">
-                    <i class="fa fa-download"></i> Download
-                </a>
+              <a class="button unfilled" href="https://github.com/princeton-nlp/intercode/tree/master/data">
+                <i class="fa fa-download"></i> Download
+              </a>
             </div>
             <div class="button-container">
-                <a class="button unfilled" href="https://pypi.org/project/intercode-bench/">
-                    <i class="fa fa-archive"></i> PyPI
-                </a>
+              <a class="button unfilled" href="https://pypi.org/project/intercode-bench/">
+                <i class="fa fa-archive"></i> PyPI
+              </a>
             </div>
         </div>
       </div>
@@ -142,28 +141,97 @@
               The <b>Success Rate</b> metric refers to the percentage of tasks
               that were <i>resolved</i> by the model (received a score of 1.0).
             </p>
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Model</th>
-                  <th>Success Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <p class="rank-number">1.</p>
-                    <p><span class="label-date">Oct 10.2023</span></p>
-                  </td>
-                  <td>
-                    <p class="model-type">GPT-3 (Zero-Shot)*</p>
-                    <p class="model-owner">OpenAI</p>
-                  </td>
-                  <td><p class="number">0.7177</p></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="content-wrapper" style="padding:0;">
+              <div class="tablinks button-container button-small" id="tab-bash" onclick="openLeaderboard(event, 'Bash')">
+                <a href="#bash" class="button unfilled">
+                  <i class="fa fa-terminal"></i> Bash
+                </a>
+              </div>
+              <div class="tablinks button-container button-small" id="tab-sql" onclick="openLeaderboard(event, 'SQL')">
+                <a href="#sql" class="button unfilled">
+                  <i class="fa fa-table"></i> SQL
+                </a>
+              </div>
+              <div class="tablinks button-container button-small" id="tab-ctf" onclick="openLeaderboard(event, 'CTF')">
+                <a href="#ctf" class="button unfilled">
+                  <i class="fa fa-flag"></i> CTF
+                </a>
+              </div>
+            </div>
+
+            <div id="Bash" class="tabcontent">
+              <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Success Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="rank-number">1.</p>
+                      <p><span class="label-date">Oct 10.2023</span></p>
+                    </td>
+                    <td>
+                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
+                      <p class="model-owner">OpenAI</p>
+                    </td>
+                    <td><p class="number">0.7177</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="SQL" class="tabcontent">
+              <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Success Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="rank-number">1.</p>
+                      <p><span class="label-date">Oct 9.2023</span></p>
+                    </td>
+                    <td>
+                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
+                      <p class="model-owner">OpenAI</p>
+                    </td>
+                    <td><p class="number">0.7177</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="CTF" class="tabcontent">
+              <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Success Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="rank-number">1.</p>
+                      <p><span class="label-date">Oct 8.2023</span></p>
+                    </td>
+                    <td>
+                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
+                      <p class="model-owner">OpenAI</p>
+                    </td>
+                    <td><p class="number">0.7177</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div class="centered-text-container">
               <p class="text-content centralize-text">
                 <a href="https://github.com/princeton-nlp/intercode/tree/master/experiments">Evaluation code</a>
@@ -178,5 +246,27 @@
         <div class="footer-text"><a href="https://princeton-nlp.github.io/">© Princeton NLP 2023</a></div>
       </div>
     </footer>
+    <script>
+      function openLeaderboard(evt, leaderboard) {
+        var i, tabcontent, tablinks;
+        // Get elements by class
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        // Remove active class
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        // Make current tab active
+        document.getElementById(leaderboard).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      window.onload = function () {
+        openLeaderboard(event, "Bash");
+        document.getElementById("tab-bash").className += " active";
+      };
+    </script>
   </body>
 </html>
