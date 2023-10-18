@@ -88,7 +88,7 @@
             </p>
             <img style="width:100%;margin:1em 0em;" src="img/Preview-Small.png" />
             <p class="text-content">
-              InterCode currently features <b>3</b> different code environments: IC-Bash, IC-SQL, and IC-CTF.
+              InterCode currently features <b>4</b> different code environments: IC-Bash, IC-CTF, IC-Python, IC-SQL.
               You can learn more about each in our blog post series (coming soon)!
             </p>
           </div>
@@ -140,6 +140,8 @@
             <p class="text-content">
               The <b>Success Rate</b> metric refers to the percentage of tasks
               that were <i>resolved</i> by the model (received a score of 1.0).
+              <br><br>
+              <sup>0</sup> - Denotes <i>zero shot</i> evaluation (no interaction)
             </p>
             <div class="content-wrapper" style="padding:0;">
               <div class="tablinks button-container button-small" id="tab-bash" onclick="openLeaderboard(event, 'Bash')">
@@ -147,92 +149,267 @@
                   <i class="fa fa-terminal"></i> Bash
                 </a>
               </div>
-              <div class="tablinks button-container button-small" id="tab-sql" onclick="openLeaderboard(event, 'SQL')">
-                <a href="#sql" class="button unfilled">
-                  <i class="fa fa-table"></i> SQL
-                </a>
-              </div>
               <div class="tablinks button-container button-small" id="tab-ctf" onclick="openLeaderboard(event, 'CTF')">
                 <a href="#ctf" class="button unfilled">
                   <i class="fa fa-flag"></i> CTF
                 </a>
               </div>
+              <div class="tablinks button-container button-small" id="tab-python" onclick="openLeaderboard(event, 'Python')">
+                <a href="#ctf" class="button unfilled">
+                  <i class="fab fa-python"></i> Python
+                </a>
+              </div>
+              <div class="tablinks button-container button-small" id="tab-sql" onclick="openLeaderboard(event, 'SQL')">
+                <a href="#sql" class="button unfilled">
+                  <i class="fa fa-table"></i> SQL
+                </a>
+              </div>
             </div>
-
             <div id="Bash" class="tabcontent">
               <table class="content-table">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Success Rate</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Model</th><th>Date</th><th>Owner</th><th>Success Rate</th></tr></thead>
                 <tbody>
                   <tr>
-                    <td>
-                      <p class="rank-number">1.</p>
-                      <p><span class="label-date">Oct 10.2023</span></p>
-                    </td>
-                    <td>
-                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
-                      <p class="model-owner">OpenAI</p>
-                    </td>
-                    <td><p class="number">0.7177</p></td>
+                    <td><p class="model-type">🥇 GPT-4</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">48.5</p></td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-            <div id="SQL" class="tabcontent">
-              <table class="content-table">
-                <thead>
                   <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Success Rate</th>
+                    <td><p class="model-type">🥈 GPT-3.5-Turbo</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">46.5</p></td>
                   </tr>
-                </thead>
-                <tbody>
                   <tr>
-                    <td>
-                      <p class="rank-number">1.</p>
-                      <p><span class="label-date">Oct 9.2023</span></p>
-                    </td>
-                    <td>
-                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
-                      <p class="model-owner">OpenAI</p>
-                    </td>
-                    <td><p class="number">0.7177</p></td>
+                    <td><p class="model-type">🥉 CodeLlama-34B-INST</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">36.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Lemur-70B-Chat</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Salesforce</p></td>
+                    <td><p class="number">34.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">GPT-3.5-Turbo<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">34.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">GPT-4<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">34.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Llama-2-70B-Chat</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">31.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Vicuna-13B</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">24.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">StarChat-16B</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">23.7</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">text-bison-001</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">22.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">chat-bison-001</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">19.2</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">chat-bison-001<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">17.7</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">StarChat-16B<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">17.7</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">text-bison-001<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">17.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Vicuna-13B<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">16.0</p></td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div id="CTF" class="tabcontent">
               <table class="content-table">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Success Rate</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Model</th><th>Date</th><th>Owner</th><th>Success Rate</th></tr></thead>
                 <tbody>
                   <tr>
-                    <td>
-                      <p class="rank-number">1.</p>
-                      <p><span class="label-date">Oct 8.2023</span></p>
-                    </td>
-                    <td>
-                      <p class="model-type">GPT-3 (Zero-Shot)*</p>
-                      <p class="model-owner">OpenAI</p>
-                    </td>
-                    <td><p class="number">0.7177</p></td>
+                    <td><p class="model-type">🥇 GPT-4</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">37.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">🥈 Lemur-70B-Chat</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Salesforce</p></td>
+                    <td><p class="number">22.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">🥉 CodeLlama-34B-INST</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">16.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">GPT-3.5-Turbo</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">11.0</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Llama-2-70B-Chat</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">9.0</p></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
-            <div class="centered-text-container">
+            <div id="Python" class="tabcontent">
+              <table class="content-table">
+                <thead><tr><th>Model</th><th>Date</th><th>Owner</th><th>Success Rate</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>Coming soon!</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="SQL" class="tabcontent">
+              <table class="content-table">
+                <thead><tr><th>Model</th><th>Date</th><th>Owner</th><th>Success Rate</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><p class="model-type">🥇 GPT-4</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">84.4</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">🥈 Lemur-70B-Chat</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Salesforce</p></td>
+                    <td><p class="number">73.39</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">🥉 GPT-3.5-Turbo</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">72.82</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Llama-2-70B-Chat</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">67.89</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">CodeLlama-34B-INST</p></td>
+                    <td><span class="label-date">10.12.2023</span></td>
+                    <td><p class="model-owner">Meta</p></td>
+                    <td><p class="number">67.79</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">text-bison-001</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">12.9</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">text-bison-001<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">11.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">GPT-3.5-Turbo<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">10.5</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">chat-bison-001</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">9.9</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">StarChat-16B</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">9.7</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">GPT-4<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">OpenAI</p></td>
+                    <td><p class="number">9.1</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">StarChat-16B<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">8.9</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">chat-bison-001<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Google</p></td>
+                    <td><p class="number">7.9</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Vicuna-13B</p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">6.3</p></td>
+                  </tr>
+                  <tr>
+                    <td><p class="model-type">Vicuna-13B<sup>0</sup></p></td>
+                    <td><span class="label-date">06.27.2023</span></td>
+                    <td><p class="model-owner">Open Source</p></td>
+                    <td><p class="number">2.6</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="centered-text-container" style="margin-top:1.5em;">
               <p class="text-content centralize-text">
                 <a href="https://github.com/princeton-nlp/intercode/tree/master/experiments">Evaluation code</a>
               </p>
