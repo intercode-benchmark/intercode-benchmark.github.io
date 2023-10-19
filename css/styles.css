@@ -327,3 +327,9 @@ th {
   margin: auto;
   padding-top: 1em;
 }
+
+/* Environments Section Styling */
+.content-wrapper.envs {
+  flex-direction: column;
+  max-width: 760px;
+}

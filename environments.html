@@ -67,8 +67,33 @@
       </div>
     </section>
     <section class="main-container">
-      <div class="content-wrapper">
-        Coming soon!
+      <div class="content-wrapper" style="justify-content: center;">
+        <div class="tablinks button-container button-small" id="tab-bash" onclick="openLeaderboard(event, 'Bash')">
+          <a href="#bash" class="button unfilled">
+            <i class="fa fa-terminal"></i> Bash
+          </a>
+        </div>
+        <div class="tablinks button-container button-small" id="tab-ctf" onclick="openLeaderboard(event, 'CTF')">
+          <a href="#ctf" class="button unfilled">
+            <i class="fa fa-flag"></i> CTF
+          </a>
+        </div>
+        <div class="tablinks button-container button-small" id="tab-python" onclick="openLeaderboard(event, 'Python')">
+          <a href="#ctf" class="button unfilled">
+            <i class="fab fa-python"></i> Python
+          </a>
+        </div>
+        <div class="tablinks button-container button-small" id="tab-sql" onclick="openLeaderboard(event, 'SQL')">
+          <a href="#sql" class="button unfilled">
+            <i class="fa fa-table"></i> SQL
+          </a>
+        </div>
+      </div>
+      <div class="content-wrapper envs">
+        <div id="Bash" class="tabcontent">Coming soon!</div>
+        <div id="CTF" class="tabcontent">Coming soon!</div>
+        <div id="Python" class="tabcontent">Coming soon!</div>
+        <div id="SQL" class="tabcontent">Coming soon!</div>
       </div>
     </section>
     <footer class="footer-container">
@@ -77,6 +102,27 @@
       </div>
     </footer>
     <script>
+      function openLeaderboard(evt, leaderboard) {
+        var i, tabcontent, tablinks;
+        // Get elements by class
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        // Remove active class
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        // Make current tab active
+        document.getElementById(leaderboard).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      window.onload = function () {
+        openLeaderboard(event, "Bash");
+        document.getElementById("tab-bash").className += " active";
+      };
+
       var myButton = document.getElementById('button-home');
       myButton.addEventListener('click', function() {
         window.location.href = '/';
