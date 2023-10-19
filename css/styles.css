@@ -294,10 +294,6 @@ th {
     font-size: 0.85em;
     top: 1.5em;
   }
-
-  .image-content img {
-    width: 350px;
-  }
 }
 
 /* Laptop */
@@ -311,4 +307,23 @@ th {
     max-width: 1200px;
     flex-direction: row;
   }
+}
+
+/* About Section Styling */
+.content-wrapper.about {
+  flex-direction: column;
+  max-width: 760px;
+}
+
+.caption {
+  font-size: 16px;
+  color: #666;
+  margin: 1em 3em 0em 3em;
+  text-align: left;
+}
+
+.image-content {
+  width: 70%;
+  margin: auto;
+  padding-top: 1em;
 }

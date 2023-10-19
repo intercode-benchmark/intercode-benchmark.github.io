@@ -67,13 +67,56 @@
       </div>
     </section>
     <section class="main-container">
-      <div class="content-wrapper">
-        Coming soon!
+      <div class="content-wrapper about">
+        <h2 style="margin-bottom:0.25em;">Overview</h2>
+        <p>
+          Humans write code in a <b>fundamentally interactive manner</b> and rely on constant execution feedback to correct errors, resolve ambiguities, and decompose tasks.
+          While LLMs have recently exhibited promising coding capabilities, current coding benchmarks mostly consider a <b>static instruction-to-code sequence transduction process</b>, which has the potential for error propagation and a disconnect between the generated code and its final execution environment.
+          <br><br>
+          To address this gap, we introduce <b>InterCode, a lightweight, flexible, and easy-to-use framework of interactive coding</b> as a standard reinforcement learning (RL) environment, with <b>code as actions</b> and execution feedback as observations.
+          <br><br>
+          Our framework is <b>language and platform agnostic</b>, uses <b>self-contained Docker environments</b> to provide safe and reproducible execution, and is <b>compatible out-of-the-box with traditional seq2seq coding methods</b>, while enabling the development of new methods for interactive code generation.
+        </p>
+        <img src="img/Formulation.png" class="image-content" />
+        <p class="caption">
+          <b>Overview of InterCode</b>. Setting up an interactive code environment with InterCode requires a
+          Dockerfile, dataset, reward function definition, and a small amount of subclass implementation. The
+          interactive loop between agent and environment closely mirrors real world software development processes.
+        </p>
+        <h2 style="margin-bottom:0.25em;margin-top:1em;">Contributions</h2>
+        <p>
+          InterCode is fundamentally a <b>library for constructing interactive coding environments</b> that are founded on the formulation presented in the main paper. We first put forth this library, then construct <b>4 unique task environments</b>: IC-Bash, IC-CTF, IC-Python, and IC-SQL. You can learn more about them on the "Environments" page.
+        </p>
+        <div style="display:flex;justify-content:center;margin-top:0.5em;margin-bottom:0.5em;">
+          <img src="img/Traj-SQL.png" style="width:35%;vertical-align:top;margin-right:1em;" />
+          <img src="img/Reward-SQL.png" style="width:35%;vertical-align:top;margin-left:1em;" />
+        </div>
+        <p class="caption">
+          <b>IC-SQL Visualization</b>. We define a SQL interpreter in a MySQL Database as the task environment. We bootstrap the Spider <a href="https://yale-lily.github.io/spider">dataset</a>, making key tranformations to convert SQLite data to a MySQL format to be compatible with our interactive setting. Finally, we define a custom reward function that evalutes whether an agent completed the task based on an Intersection over Union comparison of the latest execution output of an agent and the reference gold command.
+        </p>
+        <h2 style="margin-bottom:0.25em;margin-top:1em;">Key Takeaways</h2>
+        <p>
+          We evaluate several state-of-the-art open/closed source models on the IC-Bash and IC-SQL tasks. In our evaluation, we also experiment with different well-established prompting frameworks, such as ReAct and Plan & Solve.
+        </p>
+        <img src="img/Approaches.png" class="image-content" />
+        <p style="margin-top:1em;">
+          From our experiments, ablations, and analysis, we draw the three following conclusions:
+          <br><br>
+          1. From our comparison of base models with Single Turn and Try Again mode, we note that performance on task of generating correct answer to an instruction using code is <b>vastly superior in an interactive setting</b>.
+          <br><br>
+          2. From our comparison of different prompting strategies using the GPT-3.5 base model, we observe that <b>A. Different tasks present different learning challenges</b> and <b>B. More adaptive reasoning techniques are favorable</b>.
+          <br><br>
+          3. We create a new Capture the Flag dataset consisting of 100 task instances, demonstrating the <b>flexibility of our framework</b>, <b>ease of creating new environments</b>, and the <b>novel challenges that new interactive settings can introduce</b>.
+        </p>
       </div>
     </section>
     <footer class="footer-container">
       <div class="content-wrapper">
-        <div class="footer-text"><a href="https://princeton-nlp.github.io/">© Princeton NLP 2023</a></div>
+        <div class="footer-text">
+          <a href="https://princeton-nlp.github.io/">
+            © Princeton NLP 2023
+          </a>
+        </div>
       </div>
     </footer>
     <script>
