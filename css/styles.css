@@ -51,7 +51,7 @@ body {
 }
 
 .header-container {
-  height: 4em;
+  height: 6em;
   background-color: var(--lightgreen);
   justify-content: center;
 }
@@ -61,6 +61,11 @@ body {
   flex-direction: column;
   margin: 0 auto;
   padding: 0 0.5em;
+}
+
+.content-wrapper.header {
+  align-items: center;
+  padding-top: 0.5em;
 }
 
 .grid-1-2 {
@@ -88,6 +93,10 @@ h1.logo {
   align-items: center;
   justify-content: center;
   padding: 2em 0em;
+}
+
+.title-wrapper p,h3 {
+  text-align: center;
 }
 
 .main-container {
@@ -131,11 +140,11 @@ h2.text-title {
 }
 
 .top-bar {
-  margin-left: auto;
-  margin-right:2em;
+  margin-top: 0.5em;
 }
 .top-bar a {
   color: var(--blue);
+  cursor: pointer;
 }
 .top-bar a:hover {
   filter: brightness(55%);
@@ -298,6 +307,13 @@ th {
 
 /* Laptop */
 @media (min-width: 960px) {
+  .top-bar {
+    margin-left: auto;
+    margin-right: 2em;
+  }
+  .header-container {
+    height: 4em;
+  }
 }
 
 /* Desktop */
@@ -328,8 +344,25 @@ th {
   padding-top: 1em;
 }
 
+.image-pair {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 /* Environments Section Styling */
 .content-wrapper.envs {
   flex-direction: column;
   max-width: 760px;
+}
+
+.content-wrapper.envs p.points {
+  margin: 1em 2em 1em 2em;
+  max-width: 600px;
+}
+
+.content-wrapper.envs a {
+  color: var(--blue);
+  text-decoration: underline;
 }
