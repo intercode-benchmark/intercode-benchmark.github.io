@@ -88,11 +88,16 @@
             <i class="fa fa-table"></i> SQL
           </a>
         </div>
+        <div class="tablinks button-container button-small" id="tab-swe" onclick="openLeaderboard(event, 'SWE')">
+          <a href="#swe" class="button unfilled">
+            <i class="fa fa-code"></i> SWE
+          </a>
+        </div>
       </div>
       <div class="content-wrapper envs" style="margin-top:1em;">
         <div id="Bash" class="tabcontent">
           <p>
-            The <b>IC-Bash</b> environment presents an <b>Ubuntu Terminal</b> as the environment, and models can interact with this setting via <b>Bash</b> commands. This environment uses Bash-based transduction tasks.
+            The <b>IC-Bash</b> environment presents an <b>Ubuntu Terminal</b> as the environment, and models can interact with this setting via <b>Bash</b> commands. This environment works well with Bash-based transduction tasks, such as NL2Bash.
           </p>
           <p class="points">
             &bullet; <b>Environment</b>: Ubuntu Terminal<br>
@@ -112,15 +117,20 @@
           <p>
             The <b>IC-CTF</b> environment presents an <b>Ubuntu Terminal</b> as the environment, and models can interact with this setting via <b>Bash</b> and <b>Python</b> commands. The goal, which mirrors the real-world <a href="https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)">cybersecurity game</a>, is to find and submit a <b>flag</b> (a text string) hidden in the system.
           </p>
+          <p style="margin-top:1em;">
+            The CTF dataset is unique in that it essentially <b>requires interaction</b> for task completion.
+            For the majority of tasks, it's likely that a <b>model must try out multiple solutions</b> that lead to dead ends before executing a successful approach.
+            <b>Single turn task completion is impossible</b> with the exception of the easiest instances.
+          </p>
           <p class="points">
             &bullet; <b>Environment</b>: Ubuntu Terminal<br>
             &bullet; <b>Action Space</b>: Bash, Python<br>
             &bullet; <b>Reward Func. Input</b>: Submission of <i>Flag</i><br>
-            &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/spider">Spider</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/wikisql">WikiSQL</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/bird">BIRD-SQL</a>.
+            &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/ctf">InterCode-CTF</a>
           </p>
           <img src="img/Traj-CTF.png" style="width:100%;" />
           <p class="caption">
-            <b>IC-CTF Visualization</b>. Each IC-CTF task has a unique set of digital assets (e.g., files, folders, executables) made available to the agent. The agent can interact with the environment via Bash and Python commands to find the flag. The reward function determines checks if the flag is correct. Solving CTF often requires models to try out multiple solutions that lead to dead ends before success.
+            <b>IC-CTF Visualization</b>. Each IC-CTF task has a unique set of digital assets (e.g., files, folders, executables) made available to the agent. The agent can interact with the environment via Bash and Python commands to find the flag. The reward function determines checks if the flag is correct.
           </p>
         </div>
         <div id="Python" class="tabcontent">
@@ -143,7 +153,7 @@
             &bullet; <b>Environment</b>: MySQL Database<br>
             &bullet; <b>Action Space</b>: SQL<br>
             &bullet; <b>Reward Func. Input</b>: Latest Standard Output<br>
-            &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/spider">Spider</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/wikisql">WikiSQL</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/bird">BIRD-SQL</a>.
+            &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/spider">Spider</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/wikisql">WikiSQL</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/bird">BIRD-SQL</a>
           </p>
           <div class="image-pair">
             <img src="img/Traj-SQL.png" style="width:35%;vertical-align:top;margin-right:1em;" />
@@ -151,6 +161,26 @@
           </div>
           <p class="caption">
             <b>IC-SQL Visualization</b>. We define a SQL interpreter in a MySQL Database as the task environment. An agent interacts with SQL commands (e.g., DESCRIBE, SELECT, SHOW) to answer the question. The reward function compares the latest standard output to the expected standard output via an intersection over union (IoU) to determine how many records match correctly.
+          </p>
+        </div>
+        <div id="SWE" class="tabcontent">
+          <p>
+            The <b>IC-SWE</b> environment presents a <b>Ubuntu Terminal</b> as the environment, and models can interact with this setting via <b>Bash</b> commands. This setting is created to support <b>agent-based approaches</b> to solving the SWE-bench task.
+          </p>
+          <p style="margin-top:1em;">
+            The <a href="https://swe-bench.github.io/">SWE-bench task</a>
+            gives a model a <b>codebase</b> along with an <b>issue</b> describing a problem with the codebase.
+            The model must then <b>fix the issue</b> by editing codebase files (via creating and applying <i>patch</i> files).
+            To evaluate the quality of the fix, a set of unit tests are then run on the codebase. 
+          </p>
+          <p style="margin-top:1em;">
+            As of 10.19.2023, there are <b>no</b> formal agent-based approaches to solving SWE-bench.
+            If you would like to collaborate on this task or propose a solution, please reach out to <a href="https://john-b-yang.github.io/">John Yang</a> for more details on ongoing work or instructions on how to perform evaluation.
+          </p>
+          <p class="points">
+            &bullet; <b>Environment</b>: Ubuntu Terminal<br>
+            &bullet; <b>Action Space</b>: Bash<br>
+            &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/swe-bench">SWE-bench</a>
           </p>
         </div>
       </div>
