@@ -106,8 +106,8 @@
             &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/bash/nl2bash">NL2Bash</a>
           </p>
           <div class="image-pair">
-            <img src="img/Traj-Bash.png" style="width:35%;vertical-align:top;margin-right:1em;" />
-            <img src="img/Reward-Bash.png" style="width:35%;vertical-align:top;margin-left:1em;" />
+            <img src="img/Traj-Bash.png" style="width:40%;vertical-align:top;margin-right:1em;" />
+            <img src="img/Reward-Bash.png" style="width:40%;vertical-align:top;margin-left:1em;" />
           </div>
           <p class="caption">
             <b>IC-Bash Visualization</b>. Given the user question "Find all text files...", an agent should then interact with the Ubuntu Terminal system via Bash commands (e.g., ls, pwd, find) to answer the question. The reward function then determines if the latest standard output and file system state after all turns matches the expected final state.
@@ -144,6 +144,12 @@
             &bullet; <b>Supported Datasets</b>:
               <a href="https://github.com/princeton-nlp/intercode/tree/master/data/python/apps">APPS</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/python/mbpp">MBPP</a>
           </p>
+          <div class="image-pair">
+            <img src="img/Traj-Python.png" style="width:85%" />
+          </div>
+          <p class="caption">
+            <b>IC-Python Visualization</b>. In this setting, an agent interacts with a Python Interpreter to 1. implement the requested method and 2. write test cases to determine if the function is working correctly. Upon submission, the reward function then evaluates the agent's implementation with a set of unit tests.
+          </p>
         </div>
         <div id="SQL" class="tabcontent">
           <p>
@@ -156,8 +162,8 @@
             &bullet; <b>Supported Datasets</b>: <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/spider">Spider</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/wikisql">WikiSQL</a>, <a href="https://github.com/princeton-nlp/intercode/tree/master/data/sql/bird">BIRD-SQL</a>
           </p>
           <div class="image-pair">
-            <img src="img/Traj-SQL.png" style="width:35%;vertical-align:top;margin-right:1em;" />
-            <img src="img/Reward-SQL.png" style="width:35%;vertical-align:top;margin-left:1em;" />
+            <img src="img/Traj-SQL.png" style="width:40%;vertical-align:top;margin-right:1em;" />
+            <img src="img/Reward-SQL.png" style="width:40%;vertical-align:top;margin-left:1em;" />
           </div>
           <p class="caption">
             <b>IC-SQL Visualization</b>. We define a SQL interpreter in a MySQL Database as the task environment. An agent interacts with SQL commands (e.g., DESCRIBE, SELECT, SHOW) to answer the question. The reward function compares the latest standard output to the expected standard output via an intersection over union (IoU) to determine how many records match correctly.
